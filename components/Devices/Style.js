@@ -1,9 +1,9 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-    container:{
+    container: {
         flex: 1,
-        alignItens: 'center',
+        alignItems: 'center',
         justifyContent: 'flex-start',
         width: '100%',
     },
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
         fontFamily: 'TitilliumWeb-Regular',
         marginBottom: 24,
     },
-    list:{
+    list: {
         height: 200,
         width: '100%',
     },
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         borderBottomColor: '#ccc',
     },
-    itemText:{
+    itemText: {
         fontFamily: 'TitilliumWeb-Regular',
     },
 });

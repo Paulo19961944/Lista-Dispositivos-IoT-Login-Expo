@@ -1,13 +1,13 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-    container:{
-        flex: 1,
-        justifyContent: 'center',
+    container: {
+        flex: 0,
         alignItems: 'center',
         marginTop: 48,
+        marginBottom: 16,
     },
-    containerButton:{
+    containerButton: {
         backgroundColor: '#2d8555',
         borderRadius: 4,
         width: 200,
@@ -15,35 +15,46 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-    buttonText:{
+    buttonText: {
         color: '#f5f5f5',
         fontFamily: 'TitilliumWeb-SemiBold',
     },
-    modalContent:{
-        width: 300,
+    modalContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)', // Cor de fundo escurecida
+    },
+    modalContent: {
+        width: '80%', // Largura do conteúdo do modal
         padding: 20,
         backgroundColor: '#f0f0f0',
         borderRadius: 10,
+        alignItems: 'center', // Centraliza o conteúdo dentro do modal
     },
-    modalTitle:{
+    modalTitle: {
         fontSize: 20,
-        marginBottom: 10,
+        fontWeight: 'bold',
+        marginBottom: 20,
+        textAlign: 'center',
     },
-    input:{
+    input: {
         borderWidth: 1,
         borderColor: '#ccc',
         borderRadius: 4,
         marginBottom: 10,
         padding: 10,
+        width: '100%', // Faz o input ocupar toda a largura do modal
     },
-    modalButton:{
+    modalButton: {
         backgroundColor: '#2d8555',
         borderRadius: 4,
         padding: 10,
         marginTop: 10,
         alignItems: 'center',
+        width: '100%', // Faz o botão ocupar toda a largura do modal
     },
-    modalButtonText:{
+    modalButtonText: {
         color: '#f5f5f5',
     },
 });

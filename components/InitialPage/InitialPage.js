@@ -6,22 +6,25 @@ import { auth } from "../../firebaseConfig";
 import { signOut } from "firebase/auth";
 import { useNavigation } from "@react-navigation/native";
 
-export default function InitialPageTemplate(){
+export default function InitialPageTemplate() {
     const navigation = useNavigation();
 
     const handleLogout = async () => {
-        try{
-          await signOut(auth);
-          navigation.replace('Login');
-        } catch(error){
-          Alert.alert("Ocorreu um erro", error.message);
+        try {
+            await signOut(auth);
+            navigation.replace('Login');
+        } catch (error) {
+            Alert.alert("Ocorreu um erro", error.message);
         }
     };
 
-    return(
+    return (
         <View style={styles.container}>
             <Text style={styles.title}>Seja Bem Vindo</Text>
-            <Text style={styles.text}>Você efetuou o primeiro login. Essa é a primeira base de toda a aplicação.</Text>
+            <Text style={styles.text}>Olá, para gerenciar os seus dispositivos clique no botão abaixo.</Text>
+            <TouchableOpacity style={styles.buttonManagerDevices} onPress={() => {navigation.navigate('ListDevices')}}>
+                <Text style={styles.buttonText}>(+) Gerenciar Dispositivos</Text>
+            </TouchableOpacity>
             <TouchableOpacity onPress={handleLogout}>
                 <Text style={styles.logout}>Logout</Text>
             </TouchableOpacity>

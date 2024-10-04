@@ -6,46 +6,46 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from 'firebase/firestore';
 import styles from "./Style";
 
-export default function CreateAccountPage(){
+export default function CreateAccountPage() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const navigation = useNavigation();
 
-    const createAccontFromUser = async () =>{
-        try{
+    const createAccontFromUser = async () => {
+        try {
             const userCredential = await createUserWithEmailAndPassword(auth, username, password);
             const user = userCredential.user;
 
-            await setDoc(doc(db, 'Usuários', user.uid),{
+            await setDoc(doc(db, 'Usuários', user.uid), {
                 user: username
             });
 
             Alert.alert("Cadastro realizado com sucesso", "Você já pode fazer login")
             navigation.navigate('Login');
-        } catch(error){
+        } catch (error) {
             Alert.alert('Ocorreu um erro', error.message);
         }
     };
 
-    return(
+    return (
         <View style={styles.container}>
             <Text style={styles.title}>Criar Conta</Text>
             <Text style={styles.text}>Digite seu email:</Text>
-            <TextInput 
-              style={styles.input}
-              placeholder="Email"
-              value={username}
-              onChangeText={setUsername}
-              accessibilityLabel="Email"
+            <TextInput
+                style={styles.input}
+                placeholder="Email"
+                value={username}
+                onChangeText={setUsername}
+                accessibilityLabel="Email"
             />
             <Text style={styles.text}>Digite sua senha</Text>
-            <TextInput 
-              style={styles.input}
-              placeholder="Senha"
-              value={password}
-              onChangeText={setPassword}
-              secureTextEntry
-              accessibilityLabel="Senha"
+            <TextInput
+                style={styles.input}
+                placeholder="Senha"
+                value={password}
+                onChangeText={setPassword}
+                secureTextEntry
+                accessibilityLabel="Senha"
             />
             <TouchableOpacity style={styles.button} onPress={createAccontFromUser}>
                 <Text style={styles.buttonText}>Criar Conta</Text>

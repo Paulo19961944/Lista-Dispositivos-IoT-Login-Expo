@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-    container:{
+    container: {
         flex: 0,
         position: 'absolute',
         bottom: 0,
@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
         height: 120,
         width: '100%',
     },
-    text:{
+    text: {
         fontSize: 12,
         fontFamily: 'TitilliumWeb-Regular',
         paddingHorizontal: 40,

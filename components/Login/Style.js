@@ -1,22 +1,22 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-    container:{
-        flex:1,
-        justifyContent:'center',
+    container: {
+        flex: 0,
+        justifyContent: 'center',
         alignItems: 'center',
         padding: 20,
     },
-    title:{
+    title: {
         textAlign: 'center',
         fontSize: 24,
         fontFamily: 'TitilliumWeb-Bold',
         marginBottom: 32,
     },
-    text:{
+    text: {
         fontFamily: 'TitilliumWeb-Regular',
     },
-    input:{
+    input: {
         width: 248,
         height: 40,
         fontFamily: 'TitilliumWeb-Regular',
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
         marginTop: 10,
         paddingHorizontal: 10,
     },
-    button:{
+    button: {
         borderRadius: 4,
         marginTop: 10,
         flex: 0,
