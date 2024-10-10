@@ -1,26 +1,31 @@
+// IMPORTA A BIBLIOTECA E OS COMPONENTES NECESSÁRIOS PARA O APP
 import React, { useState } from "react";
 import { Modal, View, Text, TextInput, TouchableOpacity } from "react-native";
 import { db } from '../../firebaseConfig';
 import { collection, addDoc } from 'firebase/firestore';
 import styles from "./Style";
 
-export default function AddDeviceModal({ visible, onClose, onDeviceAdded }) {
-    const [deviceName, setDeviceName] = useState('');
-    const [location, setLocation] = useState('');
+// FUNÇÃO PARA O MODAL
+export default function AddDeviceModal({ visible, onClose }) {
+    const [deviceName, setDeviceName] = useState(''); // Define o Nome do Dispositivo como Vazio
+    const [location, setLocation] = useState(''); // Define o Local do Dispositivo como Vazio
 
+    // FUNÇÃO PARA ADICIONAR O DISPOSITIVOS
     const handleAddDevice = async () => {
+        // SE TIVER O NOME A LOCALIZAÇÃO
         if (deviceName && location) {
+            // CRIA UMA COLEÇÃO DE DISPOSITIVOS COMO O NOME E O LOCAL
             await addDoc(collection(db, 'Dispositivos'), {
                 device: deviceName,
                 local: location,
             });
-            setDeviceName('');
-            setLocation('');
-            onDeviceAdded(); 
-            setTimeout(onClose, 500);
+            setDeviceName(''); // Reseta o Campo
+            setLocation(''); // Reseta o Campo
+            onClose(); // Fecha o Modal
         }
     };
 
+    // RENDERIZA A PÁGINA
     return (
         <Modal transparent={true} animationType="slide" visible={visible}>
             <View style={styles.modalContainer}>

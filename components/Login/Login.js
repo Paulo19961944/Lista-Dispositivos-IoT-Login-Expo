@@ -1,3 +1,4 @@
+// IMPORTA AS BIBLIOTECAS E COMPONENTES NECESSÁRIOS PARA O APP
 import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, Alert } from 'react-native';
 import { useNavigation } from "@react-navigation/native";
@@ -5,11 +6,13 @@ import { auth } from '../../firebaseConfig';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import styles from "./Style";
 
+// FUNÇÃO DE LOGIN
 export default function LoginPage() {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const navigation = useNavigation();
+    const [username, setUsername] = useState(''); // Define o Usuário como Vazio
+    const [password, setPassword] = useState(''); // Define a senha como vazio
+    const navigation = useNavigation(); // Chama o menu de navegação
 
+    // FUNÇÃO PARA VALIDAR O LOGIN
     const handleLogin = async () => {
         try {
             await signInWithEmailAndPassword(auth, username, password);
@@ -20,6 +23,7 @@ export default function LoginPage() {
         }
     };
 
+    // RENDERIZA A PÁGINA
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Login</Text>

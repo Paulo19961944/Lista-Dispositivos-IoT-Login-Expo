@@ -1,19 +1,14 @@
-// components/AddDevice/NewDevice.js
+// IMPORTA OS COMPONENTES E AS BIBLIOTECAS NECESSÁRIAS PARA O APP
 import React, { useState } from "react";
 import { View, TouchableOpacity, Text } from "react-native";
 import AddDeviceModal from "./AddDeviceModal";
 import styles from "./Style";
-import { useDevices } from '../../contexts/DeviceContext'; // Importando o contexto
 
+// FUNÇÃO PARA ADICIONAR DISPOSITIVOS
 export default function AddNewDevice() {
-    const [modalVisible, setModalVisible] = useState(false);
-    const { fetchDevices } = useDevices(); // Acessando fetchDevices do contexto
+    const [modalVisible, setModalVisible] = useState(false); // Define o Modal com False
 
-    const handleDeviceAdded = () => {
-        fetchDevices(); // Atualiza a lista de dispositivos
-        setModalVisible(false);
-    };
-
+    // RENDERIZA A PÁGINA
     return (
         <View style={styles.container}>
             <TouchableOpacity style={styles.containerButton} onPress={() => setModalVisible(true)}>
@@ -22,7 +17,6 @@ export default function AddNewDevice() {
             <AddDeviceModal
                 visible={modalVisible}
                 onClose={() => setModalVisible(false)}
-                onDeviceAdded={handleDeviceAdded}
             />
         </View>
     );

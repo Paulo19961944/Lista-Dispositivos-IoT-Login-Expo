@@ -1,3 +1,5 @@
+// components/AddDevice/Style.js
+
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
@@ -23,39 +25,36 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'rgba(0, 0, 0, 0.5)', // Cor de fundo escurecida
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
     },
     modalContent: {
-        width: '80%', // Largura do conteúdo do modal
+        width: '80%',
         padding: 20,
         backgroundColor: '#f0f0f0',
         borderRadius: 10,
-        alignItems: 'center', // Centraliza o conteúdo dentro do modal
+        alignItems: 'center',
     },
     modalTitle: {
-        fontSize: 20,
-        fontWeight: 'bold',
+        fontSize: 24,
+        fontFamily: 'TitilliumWeb-Bold',
         marginBottom: 20,
-        textAlign: 'center',
     },
     input: {
+        width: '100%',
         borderWidth: 1,
         borderColor: '#ccc',
         borderRadius: 4,
-        marginBottom: 10,
         padding: 10,
-        width: '100%', // Faz o input ocupar toda a largura do modal
+        marginBottom: 10,
     },
     modalButton: {
         backgroundColor: '#2d8555',
         borderRadius: 4,
-        padding: 10,
-        marginTop: 10,
+        width: '100%',
+        height: 40,
+        justifyContent: 'center',
         alignItems: 'center',
-        width: '100%', // Faz o botão ocupar toda a largura do modal
-    },
-    modalButtonText: {
-        color: '#f5f5f5',
+        marginVertical: 5,
     },
 });
 

@@ -1,13 +1,16 @@
+// IMPORTA AS BIBLIOTECAS E COMPONENTES NECESSÁRIOS PARA O APP
 import React, { useState } from "react";
 import { View, TouchableOpacity, Text } from 'react-native';
 import RemoveDeviceModal from "./RemoveDeviceModal";
 import styles from "./Style";
-import { useDevices } from '../../contexts/DeviceContext'; // Importando o contexto
+import { useDevices } from '../../contexts/DeviceContext';
 
+// FUNÇÃO PARA REMOVER DISPOSITIVOS
 export default function RemoveDeviceManager() {
-    const [modalVisible, setModalVisible] = useState(false);
-    const { devices, fetchDevices } = useDevices(); // Obtendo devices e fetchDevices do contexto
+    const [modalVisible, setModalVisible] = useState(false); // Define o Modal como False
+    const { devices } = useDevices(); // Carrega os Dispositivos
 
+    // RENDERIZA A PÁGINA
     return (
         <View style={styles.container}>
             <TouchableOpacity style={styles.containerButton} onPress={() => setModalVisible(true)}>
@@ -16,10 +19,6 @@ export default function RemoveDeviceManager() {
             <RemoveDeviceModal
                 visible={modalVisible}
                 onClose={() => setModalVisible(false)}
-                onDeviceRemoved={() => {
-                    fetchDevices(); // Chama fetchDevices do contexto
-                    setModalVisible(false);
-                }}
                 devices={devices}
             />
         </View>

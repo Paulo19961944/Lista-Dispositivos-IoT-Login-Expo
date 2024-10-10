@@ -1,3 +1,4 @@
+// IMPORTA AS BIBLIOTECAS
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -8,11 +9,10 @@ import LoginPage from '../Login/Login';
 import CreateAccountPage from '../CreateAccount/CreateAccountUser';
 import InitialPageTemplate from '../InitialPage/InitialPage';
 import DevicesList from '../Devices/DevicesList';
-import AddNewDevice from '../AddDevice/NewDevice';
-import RemoveDeviceManager from '../RemoveDevice/DeleteDevice';
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator(); // Cria um Navegador
 
+// FUNÇÃO PARA CRIAR ROTAS
 export default function Routes() {
     return (
         <DeviceProvider>
@@ -22,8 +22,6 @@ export default function Routes() {
                     <Stack.Screen name="CreateAccount" component={CreateAccountPage} />
                     <Stack.Screen name="Initial" component={InitialPageTemplate} />
                     <Stack.Screen name="ListDevices" component={DevicesList} />
-                    <Stack.Screen name="AddDevice" component={AddNewDevice} />
-                    <Stack.Screen name="RemoveDevice" component={RemoveDeviceManager} />
                 </Stack.Navigator>
             </NavigationContainer>
         </DeviceProvider>

@@ -1,3 +1,4 @@
+// IMPORTA AS BIBLIOTECAS E OS COMPONENTES NECESSÁRIOS PARA O APP
 import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, Alert } from "react-native";
 import { useNavigation } from "@react-navigation/native";
@@ -6,16 +7,19 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from 'firebase/firestore';
 import styles from "./Style";
 
+// FUNÇAO DE CRIAR CONTA
 export default function CreateAccountPage() {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const navigation = useNavigation();
+    const [username, setUsername] = useState(''); // Define o Usuário como Vazio
+    const [password, setPassword] = useState(''); // Define a Senha como Vazio
+    const navigation = useNavigation(); // Define a navegação
 
+    // FUNÇÃO PARA CRIAR CONTA
     const createAccontFromUser = async () => {
         try {
-            const userCredential = await createUserWithEmailAndPassword(auth, username, password);
-            const user = userCredential.user;
+            const userCredential = await createUserWithEmailAndPassword(auth, username, password); // Cria a conta com Email e Senha
+            const user = userCredential.user; // Captura os dados do usuário
 
+            // DEFINE UM DOCUMENTO COM USUÁRIOS
             await setDoc(doc(db, 'Usuários', user.uid), {
                 user: username
             });
@@ -27,6 +31,7 @@ export default function CreateAccountPage() {
         }
     };
 
+    // RENDERIZA A PÁGINA
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Criar Conta</Text>

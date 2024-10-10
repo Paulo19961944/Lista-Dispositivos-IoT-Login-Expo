@@ -26,32 +26,28 @@ const styles = StyleSheet.create({
     },
     modalContent: {
         justifyContent: 'center',
-        width: '80%', // Largura ajustada
-        height: 'auto', // Altura automática
-        padding: 20, // Padding adicionado
+        width: '80%',
+        padding: 20,
         backgroundColor: '#f0f0f0',
         borderRadius: 10,
     },
     modalTitle: {
-        fontSize: 24, // Tamanho da fonte aumentado
-        fontWeight: 'bold', // Negrito
+        fontSize: 24,
+        fontWeight: 'bold',
         marginBottom: 10,
-        textAlign: 'center', // Centralizado
+        textAlign: 'center',
     },
     deviceItem: {
-        padding: 15, // Padding aumentado
+        padding: 15,
         borderBottomWidth: 1,
         borderBottomColor: '#ccc',
-    },
-    selectedItem: {
-        backgroundColor: '#ddd',
     },
     modalButton: {
         backgroundColor: '#a8574d',
         borderRadius: 4,
         padding: 10,
         marginTop: 10,
-        alignItems: 'center', // Remover vírgula extra
+        alignItems: 'center',
     },
     modalButtonText: {
         color: '#f5f5f5',

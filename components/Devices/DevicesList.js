@@ -1,4 +1,4 @@
-// components/Devices/DevicesList.js
+// IMPORTA AS BIBLIOTECAS E OS COMPONENTES NECESSÁRIOS PARA O APP
 import React from 'react';
 import { View, Text, FlatList } from "react-native";
 import styles from "./Style";
@@ -7,9 +7,11 @@ import AddNewDevice from "../AddDevice/NewDevice";
 import RemoveDeviceManager from "../RemoveDevice/DeleteDevice";
 import Footer from "../Footer/Footer";
 
+// FUNÇÃO DEVICES LIST
 export default function DevicesList() {
-    const { devices } = useDevices();
+    const { devices } = useDevices(); // Carrega os dispositivos
 
+    // RENDERIZA A PÁGINA
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Lista de Dispositivos</Text>
@@ -24,11 +26,12 @@ export default function DevicesList() {
                     </View>
                 )}
                 style={styles.list}
+                contentContainerStyle={{ paddingBottom: 100 }}
             />
 
             <View style={styles.buttonContainer}>
                 <AddNewDevice />
-                <RemoveDeviceManager devices={devices} />
+                <RemoveDeviceManager />
             </View>
 
             <Footer />
